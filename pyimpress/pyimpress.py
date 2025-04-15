@@ -1,3 +1,19 @@
+"""COMO UTILIZAR:
+### Ver impressoras disponíveis:
+>>> python pyimpress printers
+
+Será apresentada uma lista das impressoras disponíveis no momento. (Ex.: "0-Canon G3160")
+Utilize o número a frente da impressora para imprimir um arquivo no próximo passo.
+
+### Imprimir arquivo:
+>>> python pyimpress 0 ~/Desktop/arq1.pdf 1-4 fv
+
+0: Número da impressora conforme visto a cima;
+~/Desktop/arq1.pdf: Caminho para o arquivo
+1-4: Intervalo das páginas
+fv: Pode ser "normal" (impressão em apenas um lado do papel) ou "fv" (impressão em ambos os lados do papel)
+"""
+
 import sys
 import cups
 
