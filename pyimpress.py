@@ -99,16 +99,27 @@ def main():
         # Faz impressão frente e verso
         elif type == 'fv':
             range_odd, range_even = pyimpress.get_intervalos_frente_verso(range_arq)
-        
-            # Faz a impressão das páginas ímpares
-            print(f'Imprimindo páginas impares: {range_odd}\n')
-            pyimpress.print(printer=printer, arq=arq, range=range_odd)
             
-            input('Pressione "Enter" para imprimir as páginas pares!\n')
-            
-            # Faz a impressão das páginas pares
-            print(f'Imprimindo páginas pares: {range_even}\n')
-            pyimpress.print(printer=printer, arq=arq, range=range_even)
+            if int(range_arq[0]) % 2 == 0:
+                # Faz a impressão das páginas pares
+                print(f'Imprimindo páginas pares: {range_even}\n')
+                pyimpress.print(printer=printer, arq=arq, range=range_even)
+                
+                input('Pressione "Enter" para imprimir as páginas ímpares!\n')
+                
+                # Faz a impressão das páginas ímpares
+                print(f'Imprimindo páginas impares: {range_odd}\n')
+                pyimpress.print(printer=printer, arq=arq, range=range_odd)
+            else:
+                # Faz a impressão das páginas ímpares
+                print(f'Imprimindo páginas impares: {range_odd}\n')
+                pyimpress.print(printer=printer, arq=arq, range=range_odd)
+                
+                input('Pressione "Enter" para imprimir as páginas pares!\n')
+                
+                # Faz a impressão das páginas pares
+                print(f'Imprimindo páginas pares: {range_even}\n')
+                pyimpress.print(printer=printer, arq=arq, range=range_even)
 
 if __name__ == "__main__":
     main()
